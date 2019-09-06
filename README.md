@@ -15,8 +15,6 @@ Control gas flow by opening and closing three gas valves sequentially base on us
   * http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use
 - Open load the arduino_valve_control.ino file and that should be it.
 
-* http://keck.utep.edu/
-
 Arduino_Valve_Control was created by **[Valentin Becerra](http://arithma.tech/)**
-
+* http://keck.utep.edu/
 * http://arithma.tech/
