@@ -17,6 +17,6 @@ Control gas flow by opening and closing three gas valves sequentially base on us
 
 * http://keck.utep.edu/
 
-3D Routing was created by Hao Tien Moy Torres and is maintained by **[Valentin Becerra](http://arithma.tech/)**
+Arduino_Valve_Control was created by **[Valentin Becerra](http://arithma.tech/)**
 
 * http://arithma.tech/
