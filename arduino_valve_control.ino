@@ -59,7 +59,7 @@ void setup() {
   // Print a message to the LCD. We track how long it takes since
   // this library has been optimized a bit and we're proud of it :)
   int time = millis();
-  lcd.print("Press Select to run program");
+//  lcd.print("Press Select to run program");
   time = millis() - time;
   Serial.print("Took "); Serial.print(time); Serial.println(" ms");
   lcd.setBacklight(RED);
@@ -86,27 +86,25 @@ uint8_t i=0;
 void loop() {
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
-  lcd.setCursor(0, 1);
-  // print the number of seconds since reset:
-  lcd.print(millis()/1000);
+  lcd.setCursor(0, 0);
+  lcd.print(current->valve);
+  lcd.setCursor(0,1);
+  lcd.print(current->valve_time);
 
   uint8_t buttons = lcd.readButtons();
-  char msg[21];
 
   if (buttons) {
     lcd.clear();
-    lcd.setCursor(0,0);
     if (buttons & BUTTON_UP) {
-      lcd.print("UP ");
-      lcd.setBacklight(RED);
+      current->valve_time += 30;
+      delay(500);    
     }
     if (buttons & BUTTON_DOWN) {
-      lcd.print("DOWN ");
-      lcd.setBacklight(YELLOW);
+      current->valve_time -= 15;
+      delay(500);
     }
     if (buttons & BUTTON_LEFT) {
-      current = current->next;
-      lcd.print(current->valve);
+      current = current->prev;
       delay(500);
     }
     if (buttons & BUTTON_RIGHT) {
